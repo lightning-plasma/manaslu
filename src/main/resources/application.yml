@@ -1,4 +1,7 @@
 gateway:
+  env:
+    clientlb:
+      enabled: ${ENABLE_CLIENTLB:false}
   mountain:
     host: ${HOST:localhost}
     port: ${PORT:6565}
@@ -14,7 +17,7 @@ logging:
   level:
     com:
       archetype:
-        manaslu: INFO
+        manaslu: DEBUG
     io:
       grpc: INFO
       netty: INFO
