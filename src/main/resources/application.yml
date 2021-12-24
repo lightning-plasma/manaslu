@@ -1,0 +1,17 @@
+gateway:
+  mountain:
+    host: ${HOST:localhost}
+    port: ${PORT:6565}
+    enable-ssl: ${ENABLE_SSL:false}
+
+manaslu:
+  service:
+    parallels: ${PARALLELS:3}
+    execution-time: ${EXECUTION_TIME:10000}
+
+# logging
+logging:
+  level:
+    io:
+      grpc: DEBUG
+      netty: DEBUG
