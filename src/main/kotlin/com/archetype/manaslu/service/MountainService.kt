@@ -36,7 +36,10 @@ class MountainService(
                         }
                     }
 
-                    callCount.addAndGet(1)
+                    val count = callCount.addAndGet(1)
+                    if (count % LOGGING_COUNT == 0) {
+                        logger.info { "Api Call Count=$count" }
+                    }
 
                     if (logger.isDebugEnabled) {
                         logger.debug { m }
@@ -47,10 +50,11 @@ class MountainService(
         }
 
         jobs.joinAll()
-        logger.info("Api Call Count=${callCount.get()}")
+        logger.info("Total Api Call Count=${callCount.get()}")
     }
 
     companion object {
         private val logger = KotlinLogging.logger { }
+        private const val LOGGING_COUNT = 100
     }
 }

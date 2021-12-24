@@ -12,6 +12,9 @@ manaslu:
 # logging
 logging:
   level:
+    com:
+      archetype:
+        manaslu: INFO
     io:
-      grpc: DEBUG
-      netty: DEBUG
+      grpc: INFO
+      netty: INFO

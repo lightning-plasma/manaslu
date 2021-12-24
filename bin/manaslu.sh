@@ -10,13 +10,10 @@ MAIN_CLASS=com.archetype.manaslu.ManasluApplicationKt
 # Jar file path / setting your path
 JAR_PATH="/path/to/manaslu-0.0.1-SNAPSHOT.jar"
 
-# application setting / use if necessary
-# spring profiles
-# export SPRING_PROFILES_ACTIVE="dev"
-
 # config
-# export LOGGING_LEVEL_IO_GRPC=INFO
-# export LOGGING_LEVEL_IO_NETTY=INFO
+# export LOGGING_LEVEL_IO_GRPC=DEBUG
+# export LOGGING_LEVEL_IO_NETTY=DEBUG
+# export LOGGING_LEVEL_COM_ARCHETYPE_MANASLU=DEBUG
 # export HOST="localhost"
 # export PORT="6565"
 # export ENABLE_SSL="false"

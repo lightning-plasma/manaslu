@@ -12,8 +12,10 @@ class ManasluRunner(
     private val mountainService: MountainService
 ) : ApplicationRunner {
     override fun run(args: ApplicationArguments?) = runBlocking {
-        val count = mountainService.invoke()
-        logger.info("API Call Count: $count")
+        val start = System.currentTimeMillis()
+        logger.info { "start batch application" }
+        mountainService.invoke()
+        logger.info { "end batch application. elapsed=${System.currentTimeMillis() - start}" }
     }
 
     companion object {
