@@ -27,7 +27,7 @@ class MountainService(
         val jobs = mutableListOf<Job>()
         repeat(config.parallels) {
             jobs += launch {
-                while (System.currentTimeMillis() - start < config.executionTime) {
+                while (System.currentTimeMillis() - start < config.millisecond()) {
                     val m = withContext(Dispatchers.Default) {
                         try {
                             mountainRepository.getMountainDetail("makalu")

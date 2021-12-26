@@ -10,7 +10,7 @@ gateway:
 manaslu:
   service:
     parallels: ${PARALLELS:3}
-    execution-time: ${EXECUTION_TIME:10000}
+    execution-time: ${EXECUTION_TIME:10s}
 
 # logging
 logging:
