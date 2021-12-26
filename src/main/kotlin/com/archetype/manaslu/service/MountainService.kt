@@ -33,6 +33,7 @@ class MountainService(
                             mountainRepository.getMountainDetail("makalu")
                         } catch (e: Throwable) {
                             logger.warn(e.message)
+                            null
                         }
                     }
 
