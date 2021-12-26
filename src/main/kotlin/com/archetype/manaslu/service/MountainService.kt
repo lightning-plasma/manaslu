@@ -22,12 +22,12 @@ class MountainService(
         val start = System.currentTimeMillis()
         logger.info("Api call start. configuration=$config")
 
-        val callCount = AtomicInteger()
+        val callCount = AtomicLong()
 
         val jobs = mutableListOf<Job>()
         repeat(config.parallels) {
             jobs += launch {
-                while (System.currentTimeMillis() - start < config.millisecond()) {
+                while (System.currentTimeMillis() - start < config.executionTimeMilliseconds) {
                     val m = withContext(Dispatchers.Default) {
                         try {
                             mountainRepository.getMountainDetail("makalu")
@@ -38,7 +38,7 @@ class MountainService(
                     }
 
                     val count = callCount.addAndGet(1)
-                    if (count % LOGGING_COUNT == 0) {
+                    if (count % LOGGING_COUNT == 0L) {
                         logger.info { "Api Call Count=$count" }
                     }
 
@@ -56,6 +56,6 @@ class MountainService(
 
     companion object {
         private val logger = KotlinLogging.logger { }
-        private const val LOGGING_COUNT = 100
+        private const val LOGGING_COUNT = 100L
     }
 }

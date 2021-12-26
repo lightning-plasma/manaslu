@@ -10,5 +10,5 @@ data class ServiceConfig(
     val parallels: Int,
     val executionTime: Duration,
 ) {
-    fun millisecond() = executionTime.seconds * 1000L
+    val executionTimeMilliseconds = executionTime.seconds * 1000L
 }
