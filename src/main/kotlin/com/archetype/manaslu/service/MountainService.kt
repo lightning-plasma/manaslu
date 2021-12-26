@@ -37,12 +37,12 @@ class MountainService(
                         }
                     }
 
-                    val count = callCount.addAndGet(1)
-                    if (count % LOGGING_COUNT == 0L) {
-                        logger.info { "Api Call Count=$count" }
-                    }
-
                     if (logger.isDebugEnabled) {
+                        val count = callCount.addAndGet(1)
+                        if (count % LOGGING_COUNT == 0L) {
+                            logger.debug { "Api Call Count=$count" }
+                        }
+
                         logger.debug { m }
                         logger.debug { System.currentTimeMillis() - start }
                     }
@@ -51,7 +51,7 @@ class MountainService(
         }
 
         jobs.joinAll()
-        logger.info("Total Api Call Count=${callCount.get()}")
+        logger.debug("Total Api Call Count=${callCount.get()}")
     }
 
     companion object {
