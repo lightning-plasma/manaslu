@@ -38,6 +38,9 @@ Batchの実行時間
 - ENABLE_CLIENTLB  
 Client LoadBalancingの有効化
 
+- LOGGING_LEVEL_COM_ARCHETYPE_MANASLU  
+Application Log Level
+
 - LOGGING_LEVEL_IO_GRPC  
 gPRC Log Level
 
