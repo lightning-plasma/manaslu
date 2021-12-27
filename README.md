@@ -27,7 +27,7 @@ callするgRPC ServerのHOST
 callするgRPC ServerのPORT
 
 - ENABLE_SSL  
-trueを設定するとgRPC通信でSSLを利用する
+gRPC通信でのSSLの有効化
 
 - PARALLELS  
 API Callの並列数
