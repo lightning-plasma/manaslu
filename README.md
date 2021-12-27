@@ -20,9 +20,6 @@ Spring Boot × gRPC kotlin Client Mock Application
 
 環境変数で次のsettingができます
 
-- SPRING_PROFILES_ACTIVE  
-debugを指定するとdebug logを出力します
-
 - HOST  
 callするgRPC ServerのHOST
 
